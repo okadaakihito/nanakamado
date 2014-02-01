@@ -1,0 +1,497 @@
+html,body {
+	height: 100%;
+	margin: 0;
+	min-width: 1024px;
+}
+
+#background {
+	background-image: url("bg.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	height: 100%;
+}
+
+#shadow {
+	background: #000;
+	background-attachment: fixed;
+	background-position: center;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	opacity: 0.5;
+	top: 0%;
+	left: 0%;
+}
+
+#front {
+	background-image: url("flower-back1071.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	height: 90%;
+	width: 80%;
+	position: absolute;
+	top: 5%;
+	left: 10%;
+	opacity: 0.3;
+}
+
+#contents {
+	background: #000;
+	background-attachment: fixed;
+	background-position: center;
+	height: 89%;
+	width: 79%;
+	position: absolute;
+	top: 5.5%;
+	left: 10.5%;
+	opacity: 0.9;
+}
+
+#inner_contents {
+	background: #000;
+	overflow: hidden;
+	background-attachment: fixed;
+	background-position: center;
+	height: 75%;
+	width: 90%;
+	position: absolute;
+	top: 10%;
+	left: 5%;
+}
+
+#main {
+	overflow: scroll;
+	background-image: url("flower-back1071.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	height: 150%;
+	width: 100%;
+	position: absolute;
+	padding-bottom:300px;
+}
+
+#logo {
+	background-image: url("logo.png");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100%;
+}
+
+#close {
+	background-image: url("close_button.png");
+	background-repeat: no-repeat;
+	height: 31px;
+	width: 31px;
+	display: block;
+	position: absolute;
+	right:-18px;
+	top:-18px;
+	opacity: 0.9;
+	z-index:1;
+}
+
+.left_flower {
+	background-image: url("left_flower.png");
+	background-repeat: no-repeat;
+	height: 158px;
+	width: 141px;
+	display: block;
+	position: absolute;
+	opacity: 0;
+}
+
+.right_flower {
+	background-image: url("right_flower.png");
+	background-repeat: no-repeat;
+	height: 158px;
+	width: 141px;
+	display: block;
+	position: absolute;
+	opacity: 0;
+}
+
+.nanakamado {
+	background-image: url("nanakamado.png");
+	background-repeat: no-repeat;
+	height: 20px;
+	width: 242px;
+	display: block;
+	position: absolute;
+	opacity: 0;
+}
+
+.name_na {
+	background-image: url("name_na.png");
+	background-repeat: no-repeat;
+	height: 76px;
+	width: 75px;
+	display: block;
+	position: absolute;
+	opacity: 0;
+}
+
+.name_nana {
+	background-image: url("name_nana.png");
+	background-repeat: no-repeat;
+	height: 58px;
+	width: 59px;
+	display: block;
+	position: absolute;
+	opacity: 0;
+}
+
+.name_kamado {
+	background-image: url("name_kamado.png");
+	background-repeat: no-repeat;
+	height: 78px;
+	width: 80px;
+	display: block;
+	position: absolute;
+	opacity: 0;
+}
+
+.vegetable {
+	background-image: url("vegetable.png");
+	background-repeat: no-repeat;
+	height: 104px;
+	width: 158px;
+	display: block;
+	position: absolute;
+	opacity: 0;
+}
+
+a {
+	color: #7C9907;
+	text-decoration: none;
+}
+
+div h1 {
+	margin: 0;
+	padding-bottom: 10px;
+	font-weight: bolder;
+	font-size: 24px;
+	font-family: Verdana;
+	color: #504f4f;
+	text-shadow: 0px 2px 1px #bbbaba;
+};
+h1 a {
+	color: #5D5D5D;
+	text-decoration: none;
+	font-weight: bolder;
+}
+
+h2 {
+	background-image: url("logoname.png");
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 125px;
+	padding: 0px;
+	font-weight: bold;
+	text-align: left;
+	display: inline-block;
+}
+
+div h3 {
+	background-image: url("location_icon.png");
+	background-repeat: no-repeat;
+	height: 64px;
+	width: 96px;
+	padding: 0px;
+	font-weight: bold;
+	text-align: left;
+	margin: 0;
+}
+
+H3 a {
+	text-decoration: none;
+	color: #000;
+}
+
+#banner {
+	margin: 0px;
+	text-align: left;
+	height: 145px;
+}
+
+.description {
+	font-family: Verdana;
+	font-weight: bold;
+	padding: 0px 10px 0px 0px;
+}
+
+.navi {
+	text-align: center;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+#content {
+	margin: 0px 0px 0px 40px;
+	float: left;
+	width: 540px;
+}
+
+.blog {
+	padding: 0px 5px 50px 5px;
+	text-align: left;
+	font-family: Verdana;
+}
+
+.blogbody {
+	font-weight: normal;
+	margin-bottom: 15px;
+}
+
+.date {
+	clear: left;
+	color: #AFAFAF;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 12px 0px 25px 0px;
+	border-top: 1px solid #D3D3D3;
+	font-family: Verdana;
+	font-size: 10px;
+}
+
+.title {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-weight: bold;
+}
+
+.title a {
+	border: none;
+}
+
+.text {
+	padding: 10px 0px 5px 0px;
+	margin-top: 0px;
+	line-height: 1.8em;
+	font-family: Verdana;
+}
+
+.posted {
+	text-align: right;
+	margin-bottom: 5px;
+	padding: 15px 0px 3px 0px;
+	font-size: 10px;
+	font-family: Verdana;
+}
+
+.posted a {
+	font-weight: bold;
+}
+
+#links-left {
+	font-weight: normal;
+	width: 190px;
+	float: left;
+	margin: 0px 0px 0px 0px;
+	text-align: left;
+}
+
+#links {
+
+}
+
+#calendar {
+	margin-bottom: 10px;
+	font-size: 12px;
+	border: 2px solid #F1F1F0;
+	baclground-color: #FFF;
+	width: 188px;
+}
+
+#calendar table {
+	width: 100%;
+}
+
+.calendarhead {
+	padding: 4px 10px 4px 10px;
+	font-weight: bold;
+	background-color: #F1F1F0;
+	text-align: center;
+	color: #5D5D5D;
+	font-size: 12px;
+	font-family: Verdana;
+}
+
+.calendarday {
+	padding: 3px;
+	margin-bottom: 10px;
+	color: #5D5D5D;
+	font-size: 10px;
+	font-family: Verdana;
+}
+
+.calendarday a {
+	font-weight: bold;
+}
+
+.sidetitle {
+	padding: 4px 10px 4px 10px;
+	font-weight: bold;
+	background-color: #ECECEB;
+	font-family: Verdana;
+}
+
+.side {
+	line-height: 1.8em;
+	padding: 3px 10px 10px 0px;
+	margin-bottom: 10px;
+	font-size: 10px;
+	font-family: Verdana;
+}
+
+.side a {
+	font-size: 12px;
+}
+
+.side input {
+	border: 1px solid #959595;
+	background-color: #EAEAEA;
+}
+
+.powered {
+	padding: 10px 5px 10px 5px;
+	text-align: center;
+}
+
+.syndicate {
+	margin-right: 10px;
+	text-align: center;
+	font-size: 10px;
+	font-family: Verdana;
+}
+
+#comments {
+	margin-bottom: 30px;
+	margin-top: 25px;
+	text-align: left;
+	padding: 0px;
+}
+
+#comments form {
+	margin: 0px;
+	padding: 0px;
+}
+
+#comments input {
+	max-width: 200px;
+	border: 1px solid #959595;
+	background-color: #EAEAEA;
+}
+
+#comments textarea {
+	width: 300px;
+	margin-bottom: 5px;
+	border: 1px solid #959595;
+	background-color: #EAEAEA;
+}
+
+.comments-head {
+	font-weight: bold;
+	margin: 0px;
+	font-family: Verdana;
+}
+
+.comments-body {
+	margin: 0px;
+	font-family: Verdana;
+}
+
+.comments-post {
+	padding: 3px 0px 3px 0px;
+	font-size: 10px;
+	text-align: right;
+	font-family: Verdana;
+}
+
+#trackback {
+	margin-bottom: 30px;
+	margin-top: 25px;
+	border: 1px dotted #666;
+	padding: 5px;
+	text-align: left;
+	font-family: Verdana;
+}
+
+#footer {
+	clear: left;
+	height: 50px;
+}
+
+.copyright {
+	text-align: center;
+}
+
+.diet-content {
+	padding-left: 10px;
+}
+
+#diet-foods {
+	padding-left: 10px;
+}
+
+.food-title {
+	width: 20%;
+	clear: left;
+	float: left;
+}
+
+.food-content {
+	width: 75%;
+	padding-top: 10px;
+}
+
+#diet-container {
+	border: 1px solid #999;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+.diet-title {
+	padding: 2px 10px 2px 5px;
+	margin-top: 5px;
+}
+
+.diet-content {
+	padding-left: 10px;
+}
+
+#diet-foods {
+	padding-left: 10px;
+}
+
+.food-title {
+	width: 20%;
+	clear: left;
+	float: left;
+}
+
+.food-content {
+	width: 75%;
+	padding-top: 10px;
+}
+
+.title {
+	position: relative;
+	display: inline-block;
+	-moz-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background: #333;
+	font-size: 10px;
+	text-decoration: none;
+	margin: 5px;
+	color: #fff;
+	padding: 5px 8px;
+	top: -20px;
+	left: -20px;
+}
+#map {
+    width: 750px;
+    height: 400px;
+}

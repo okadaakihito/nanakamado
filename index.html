@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>菜々竈</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" href="style.css" media="all">
+<link rel="stylesheet" href="bootstrap.css" media="all">
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
+<script src="bootstrap.js"></script>
+<script type="text/javascript"
+	src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script>
+
+	var width,height,center_width,center_height,buttonElements,contentsElements,myLatlng,map,marker;
+	var url=[];
+	url[0] = 'Untitled-1_03.gif';
+	url[1] = 'flower-back0625.jpg';
+	url[2] = 'flower-back1071.jpg';
+
+	$(function(){
+
+
+		buttonElements = "#left_flower,#right_flower,#nanakamado,#name_na,#name_nana,#name_kamado,#vegetable";
+		displayContentsElements = "#right_flower,#nanakamado,#name_na,#name_nana,#name_kamado,#vegetable";
+
+		mainContents = "#access,#concept,#menu,#news,#menu3,#menu4";
+		contentsElements = "#front,#contents,#shadow";
+
+		$(buttonElements).fadeTo(0,0);
+		$(contentsElements).hide().fadeOut(0);
+		$(mainContents).hide().fadeOut(0);
+
+		$(".background").hide().fadeIn(500);
+		$(".logo").hide().fadeIn(3000);
+
+		buttonPositionChange();
+
+		$(buttonElements).hover(function(){
+			 $(this).stop();
+			 $(this).fadeTo(200,0.8);
+			},function(){
+			 $(this).stop();
+			 $(this).fadeTo(500,0);
+		})
+
+		$("#close").hover(function(){
+			 $(this).stop();
+			 $(this).fadeTo(100,1);
+			},function(){
+			 $(this).stop();
+			 $(this).fadeTo(100,0.8);
+		})
+
+		$("#shadow,#close").click(function(){
+			 $(contentsElements).fadeOut(500);
+			 $(mainContents).fadeOut(500);
+		})
+
+		$('#left_flower').attr("target","_blank");
+
+		$('#left_flower').click(function() {
+			window.open('https://www.facebook.com/pages/%E8%8F%9C%E3%80%85%E7%AB%88/449462391846481?fref=ts', '_blank');
+		});
+
+		$('#nanakamado').click(function() {
+			$("#concept").fadeIn(500);
+		});
+
+		$('#vegetable').click(function() {
+			$("#menu").fadeIn(500);
+		});
+		$('#name_na').click(function() {
+			$("#news").fadeIn(500);
+		});
+		$('#name_nana').click(function() {
+			$("#menu3").fadeIn(500);
+		});
+		$('#name_kamado').click(function() {
+			$("#menu4").fadeIn(500);
+		});
+
+		$('#right_flower').click(function() {
+
+			$("#access").fadeIn(500);
+
+   			if(typeof myLatlng == "undefined"){
+   				/*
+		        $.ajax({
+	     	               type: 'GET',
+	     	               url: 'access.html',
+	     	               dataType: 'html',
+	     	               success: function(data) {
+
+      				$('#main').append(data);*/
+
+	   				console.log("firsttime");
+
+	   				myLatlng = new google.maps.LatLng(34.679714, 135.488617);
+
+	   		        // Basic options for a simple Google Map
+	   		        // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+	   		        var mapOptions = {
+	   		            // How zoomed in you want the map to start at (always required)
+	   		            zoom: 17,
+
+	   		            // The latitude and longitude to center the map (always required)
+	   		            center: myLatlng, // New York
+
+	   		            // How you would like to style the map.
+	   		            // This is where you would paste any style found on Snazzy Maps.
+	   		            styles: [
+						  {
+						    "featureType": "road.highway.controlled_access",
+						    "elementType": "geometry.fill",
+						    "stylers": [
+						      { "visibility": "on" },
+						      { "weight": 0.1 },
+						      { "hue": "#ffa200" },
+						      { "saturation": -20 },
+						      { "lightness": 13 }
+						    ]
+						  },{
+						    "featureType": "road",
+						    "elementType": "geometry",
+						    "stylers": [
+						      { "saturation": -8 },
+						      { "lightness": -12 },
+						      { "gamma": 1.98 },
+						      { "hue": "#005eff" },
+						      { "weight": 6.2 }
+						    ]
+						  },{
+						    "featureType": "transit.line",
+						    "elementType": "labels.text",
+						    "stylers": [
+						      { "hue": "#dd00ff" },
+						      { "weight": 1.2 },
+						      { "saturation": -100 },
+						      { "lightness": -12 },
+						      { "gamma": 0.81 }
+						    ]
+						  },{
+						  }
+						][
+						  {
+						    "featureType": "road.highway.controlled_access",
+						    "elementType": "geometry.fill",
+						    "stylers": [
+						      { "visibility": "on" },
+						      { "weight": 0.1 },
+						      { "hue": "#ffa200" },
+						      { "saturation": -20 },
+						      { "lightness": 13 }
+						    ]
+						  },{
+						    "featureType": "road",
+						    "elementType": "geometry",
+						    "stylers": [
+						      { "saturation": -8 },
+						      { "lightness": -12 },
+						      { "gamma": 1.98 },
+						      { "hue": "#005eff" },
+						      { "weight": 6.2 }
+						    ]
+						  },{
+						    "featureType": "transit.line",
+						    "elementType": "labels.text",
+						    "stylers": [
+						      { "hue": "#dd00ff" },
+						      { "weight": 1.2 },
+						      { "saturation": -100 },
+						      { "lightness": -12 },
+						      { "gamma": 0.81 }
+						    ]
+						  },{
+						  }
+						]
+	   		        };
+
+	   		        // Get the HTML DOM element that will contain your map
+	   		        // We are using a div with id="map" seen below in the <body>
+	   		        var mapElement = document.getElementById('map');
+
+	   		        // Create the Google Map using out element and options defined above
+	   		        map = new google.maps.Map(mapElement, mapOptions);
+
+	   		        marker = new google.maps.Marker({
+	   		            position: myLatlng,
+	   		            map: map,
+	   		            title:"菜々竃"
+	   		        });
+
+	   		        myInfoWindow = new google.maps.InfoWindow({
+	   		            // 吹き出しに出す文
+	   		            content: "<h3></h3>"
+	   		        });
+
+	   		        // 吹き出しを開く
+	   		        myInfoWindow.open(map, marker);
+
+	   	        	google.maps.event.addListener(marker, "click", function(event) {
+	   	            	myInfoWindow.open(map, marker);
+	   	        	});
+		     	   	        /*
+	     	               },
+	     	               error:function() {
+	     	                   alert('問題がありました。');
+     	               }*/
+	   			}
+		});
+
+		$(displayContentsElements).click(function(){
+
+			$(contentsElements).fadeIn(500);
+			if(typeof myLatlng != "undefined"){
+				google.maps.event.trigger(map, 'resize');
+			}
+		})
+
+		$(window).resize(function(){
+			buttonPositionChange();
+		})
+
+		var n = Math.floor(Math.random() * url.length);
+		$('#background,#contents,#main').css('background-image', 'url(' + url[n] + ')');
+
+		function buttonPositionChange() {
+			//---リサイズされたときに実行したい処理
+			width = $(window).width();
+			height = $(window).height();
+			map_width = $('#contents').width()*0.8;
+
+			center_width = width/2;
+			center_height = height/2;
+
+			$('#left_flower').css({top:center_height-116,left:center_width-300.5});
+			$('#right_flower').css({top:center_height-116,left:center_width+158.5});
+			$('#nanakamado').css({top:center_height+38,left:center_width-120.5});
+			$('#name_na').css({top:center_height-84,left:center_width-123.5});
+			$('#name_nana').css({top:center_height-75,left:center_width-35.5});
+			$('#name_kamado').css({top:center_height-86,left:center_width+43.5});
+			$('#vegetable').css({top:center_height+75,left:center_width-72.5});
+			$('#map').css({width:map_width});
+		}
+	});
+</script>
+</head>
+<body class="body">
+	<div id="background" class="background">
+		<div id="logo" class="logo">
+			<div id="left_flower" class="left_flower">
+				<div class="title">Facebook Page</div>
+			</div>
+			<div id="right_flower" class="right_flower">
+				<div class="title">Access</div>
+			</div>
+			<div id="nanakamado" class="nanakamado">
+				<div class="title">Concept</div>
+			</div>
+			<div id="name_na" class="name_na">
+				<div class="title">News</div>
+			</div>
+			<div id="name_nana" class="name_nana">
+				<div class="title">Menu3</div>
+			</div>
+			<div id="name_kamado" class="name_kamado">
+				<div class="title">Menu4</div>
+			</div>
+			<div id="vegetable" class="vegetable">
+				<div class="title">Menu</div>
+			</div>
+		</div>
+		<div id="shadow" class="shadow"></div>
+		<div id="front" class="front">
+			<div id="close" class="close"></div>
+		</div>
+		<div id="contents" class="contents">
+			<div id="inner_contents" class="contents">
+				<div id="main" class="main">
+					<div id="access">
+						<h1>Access</h1>
+						<h2></h2>
+						<h5>
+							〒 550-0012 大阪府大阪市大阪市西区立売堀 4-4-23 2F<br> <span
+								class="glyphicon glyphicon-earphone"></span> 06-6556-9585
+						</h5>
+						<div id="map"></div>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br>
+					</div>
+					<div id="concept">
+						<h1>Concept<h1>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					</div>
+					<div id="menu">
+						<h1>Menu<h1>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					</div>
+					<div id="news">
+						<h1>News<h1>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					</div>
+					<div id="menu3">
+						<h1>Menu3<h1>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					</div>
+					<div id="menu4">
+						<h1>Menu4<h1>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>
