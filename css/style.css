@@ -5,7 +5,7 @@ html,body {
 }
 
 #background {
-	background-image: url("bg.jpg");
+	background-image: url("/img/bg.jpg");
 	background-attachment: fixed;
 	background-position: center;
 	height: 100%;
@@ -24,7 +24,7 @@ html,body {
 }
 
 #front {
-	background-image: url("flower-back1071.jpg");
+	background-image: url("/img/flower-back1071.jpg");
 	background-attachment: fixed;
 	background-position: center;
 	height: 90%;
@@ -61,7 +61,7 @@ html,body {
 
 #main {
 	overflow: scroll;
-	background-image: url("flower-back1071.jpg");
+	background-image: url("/img/flower-back1071.jpg");
 	background-attachment: fixed;
 	background-position: center;
 	height: 150%;
@@ -71,7 +71,7 @@ html,body {
 }
 
 #logo {
-	background-image: url("logo.png");
+	background-image: url("/img/logo.png");
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -79,7 +79,7 @@ html,body {
 }
 
 #close {
-	background-image: url("close_button.png");
+	background-image: url("/img/close_button.png");
 	background-repeat: no-repeat;
 	height: 31px;
 	width: 31px;
@@ -92,7 +92,7 @@ html,body {
 }
 
 .left_flower {
-	background-image: url("left_flower.png");
+	background-image: url("/img/left_flower.png");
 	background-repeat: no-repeat;
 	height: 158px;
 	width: 141px;
@@ -102,7 +102,7 @@ html,body {
 }
 
 .right_flower {
-	background-image: url("right_flower.png");
+	background-image: url("/img/right_flower.png");
 	background-repeat: no-repeat;
 	height: 158px;
 	width: 141px;
@@ -112,7 +112,7 @@ html,body {
 }
 
 .nanakamado {
-	background-image: url("nanakamado.png");
+	background-image: url("/img/nanakamado.png");
 	background-repeat: no-repeat;
 	height: 20px;
 	width: 242px;
@@ -122,7 +122,7 @@ html,body {
 }
 
 .name_na {
-	background-image: url("name_na.png");
+	background-image: url("/img/name_na.png");
 	background-repeat: no-repeat;
 	height: 76px;
 	width: 75px;
@@ -132,7 +132,7 @@ html,body {
 }
 
 .name_nana {
-	background-image: url("name_nana.png");
+	background-image: url("/img/name_nana.png");
 	background-repeat: no-repeat;
 	height: 58px;
 	width: 59px;
@@ -142,7 +142,7 @@ html,body {
 }
 
 .name_kamado {
-	background-image: url("name_kamado.png");
+	background-image: url("/img/name_kamado.png");
 	background-repeat: no-repeat;
 	height: 78px;
 	width: 80px;
@@ -152,7 +152,7 @@ html,body {
 }
 
 .vegetable {
-	background-image: url("vegetable.png");
+	background-image: url("/img/vegetable.png");
 	background-repeat: no-repeat;
 	height: 104px;
 	width: 158px;
@@ -182,7 +182,7 @@ h1 a {
 }
 
 h2 {
-	background-image: url("logoname.png");
+	background-image: url("/img/logoname.png");
 	background-repeat: no-repeat;
 	height: 40px;
 	width: 125px;
@@ -193,7 +193,7 @@ h2 {
 }
 
 div h3 {
-	background-image: url("location_icon.png");
+	background-image: url("/img/location_icon.png");
 	background-repeat: no-repeat;
 	height: 64px;
 	width: 96px;
