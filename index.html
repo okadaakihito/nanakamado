@@ -7,6 +7,7 @@
 <meta name="description" content="">
 <link rel="stylesheet" href="css/style.css" media="all">
 <link rel="stylesheet" href="css/bootstrap.css" media="all">
+<link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'><link href='http://fonts.googleapis.com/css?family=Delius+Swash+Caps|Delius+Unicase' rel='stylesheet' type='text/css'>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script
@@ -61,6 +62,7 @@
 		$("#shadow,#close").click(function(){
 			 $(contentsElements).fadeOut(500);
 			 $(mainContents).fadeOut(500);
+	         $("#main").animate({ scrollTop: 0 }, '1000');
 		})
 
 		$('#left_flower').attr("target","_blank");
@@ -87,133 +89,7 @@
 		});
 
 		$('#right_flower').click(function() {
-
 			$("#access").fadeIn(500);
-
-   			if(typeof myLatlng == "undefined"){
-   				/*
-		        $.ajax({
-	     	               type: 'GET',
-	     	               url: 'access.html',
-	     	               dataType: 'html',
-	     	               success: function(data) {
-
-      				$('#main').append(data);*/
-
-	   				console.log("firsttime");
-
-	   				myLatlng = new google.maps.LatLng(34.679714, 135.488617);
-
-	   		        // Basic options for a simple Google Map
-	   		        // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-	   		        var mapOptions = {
-	   		            // How zoomed in you want the map to start at (always required)
-	   		            zoom: 17,
-
-	   		            // The latitude and longitude to center the map (always required)
-	   		            center: myLatlng, // New York
-
-	   		            // How you would like to style the map.
-	   		            // This is where you would paste any style found on Snazzy Maps.
-	   		            styles: [
-						  {
-						    "featureType": "road.highway.controlled_access",
-						    "elementType": "geometry.fill",
-						    "stylers": [
-						      { "visibility": "on" },
-						      { "weight": 0.1 },
-						      { "hue": "#ffa200" },
-						      { "saturation": -20 },
-						      { "lightness": 13 }
-						    ]
-						  },{
-						    "featureType": "road",
-						    "elementType": "geometry",
-						    "stylers": [
-						      { "saturation": -8 },
-						      { "lightness": -12 },
-						      { "gamma": 1.98 },
-						      { "hue": "#005eff" },
-						      { "weight": 6.2 }
-						    ]
-						  },{
-						    "featureType": "transit.line",
-						    "elementType": "labels.text",
-						    "stylers": [
-						      { "hue": "#dd00ff" },
-						      { "weight": 1.2 },
-						      { "saturation": -100 },
-						      { "lightness": -12 },
-						      { "gamma": 0.81 }
-						    ]
-						  },{
-						  }
-						][
-						  {
-						    "featureType": "road.highway.controlled_access",
-						    "elementType": "geometry.fill",
-						    "stylers": [
-						      { "visibility": "on" },
-						      { "weight": 0.1 },
-						      { "hue": "#ffa200" },
-						      { "saturation": -20 },
-						      { "lightness": 13 }
-						    ]
-						  },{
-						    "featureType": "road",
-						    "elementType": "geometry",
-						    "stylers": [
-						      { "saturation": -8 },
-						      { "lightness": -12 },
-						      { "gamma": 1.98 },
-						      { "hue": "#005eff" },
-						      { "weight": 6.2 }
-						    ]
-						  },{
-						    "featureType": "transit.line",
-						    "elementType": "labels.text",
-						    "stylers": [
-						      { "hue": "#dd00ff" },
-						      { "weight": 1.2 },
-						      { "saturation": -100 },
-						      { "lightness": -12 },
-						      { "gamma": 0.81 }
-						    ]
-						  },{
-						  }
-						]
-	   		        };
-
-	   		        // Get the HTML DOM element that will contain your map
-	   		        // We are using a div with id="map" seen below in the <body>
-	   		        var mapElement = document.getElementById('map');
-
-	   		        // Create the Google Map using out element and options defined above
-	   		        map = new google.maps.Map(mapElement, mapOptions);
-
-	   		        marker = new google.maps.Marker({
-	   		            position: myLatlng,
-	   		            map: map,
-	   		            title:"菜々竃"
-	   		        });
-
-	   		        myInfoWindow = new google.maps.InfoWindow({
-	   		            // 吹き出しに出す文
-	   		            content: "<h3></h3>"
-	   		        });
-
-	   		        // 吹き出しを開く
-	   		        myInfoWindow.open(map, marker);
-
-	   	        	google.maps.event.addListener(marker, "click", function(event) {
-	   	            	myInfoWindow.open(map, marker);
-	   	        	});
-		     	   	        /*
-	     	               },
-	     	               error:function() {
-	     	                   alert('問題がありました。');
-     	               }*/
-	   			}
 		});
 
 		$(displayContentsElements).click(function(){
@@ -291,28 +167,30 @@
 							〒 550-0012 大阪府大阪市大阪市西区立売堀 4-4-23 2F<br> <span
 								class="glyphicon glyphicon-earphone"></span> 06-6556-9585
 						</h5>
-						<div id="map"></div>
-						<br><br><br><br><br><br><br><br><br><br><br><br><br>
+						<br>
+						<img src="img/map.jpg" alt="map" class="img-rounded map">
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 					</div>
 					<div id="concept">
 						<h1>Concept<h1>
-						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br>
 					</div>
 					<div id="menu">
 						<h1>Menu<h1>
-						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+						<img src="img/menu.jpg" alt="menu" class="img-rounded menu">
+						<br><br><br><br><br><br><br><br><br><br><br><br><br>
 					</div>
 					<div id="news">
 						<h1>News<h1>
-						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br>
 					</div>
 					<div id="menu3">
 						<h1>Menu3<h1>
-						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br>
 					</div>
 					<div id="menu4">
 						<h1>Menu4<h1>
-						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br>
 					</div>
 				</div>
 			</div>
