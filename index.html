@@ -21,11 +21,10 @@
 
 	var width,height,center_width,center_height,buttonElements,contentsElements,myLatlng,map,marker;
 	var url=[];
-	url[0] = 'img/Untitled-1_03.gif';
-	url[1] = 'img/flower-back0625.jpg';
-	url[2] = 'img/flower-back1071.jpg';
-	url[3] = 'img/IMG_1322.jpg';
-	url[4] = 'img/IMG_1317.JPG';
+	url[0] = 'img/flower-back0625.jpg';
+	url[1] = 'img/flower-back1071.jpg';
+	url[2] = 'img/IMG_1322.jpg';
+	url[3] = 'img/IMG_1317.JPG';
 	$(function(){
 
 
@@ -96,9 +95,6 @@
 		$(displayContentsElements).click(function(){
 
 			$(contentsElements).fadeIn(500);
-			if(typeof myLatlng != "undefined"){
-				google.maps.event.trigger(map, 'resize');
-			}
 		})
 
 		$(window).resize(function(){
@@ -106,7 +102,7 @@
 		})
 
 		var n = Math.floor(Math.random() * url.length);
-		$('#background,#contents,#main').css('background-image', 'url(' + url[n] + ')');
+		$('#background,#contents').css('background-image', 'url(' + url[n] + ')');
 
 		function buttonPositionChange() {
 			//---リサイズされたときに実行したい処理
@@ -117,6 +113,7 @@
 			center_width = width/2;
 			center_height = height/2;
 
+			$('#logo').css({top:center_height-179,left:center_width-300.5});
 			$('#left_flower').css({top:center_height-116,left:center_width-300.5});
 			$('#right_flower').css({top:center_height-116,left:center_width+158.5});
 			$('#nanakamado').css({top:center_height+38,left:center_width-120.5});
@@ -131,7 +128,7 @@
 </head>
 <body class="body">
 	<div id="background" class="background">
-		<div id="logo" class="logo">
+			<div id="logo" class="logo"></div>
 			<div id="left_flower" class="left_flower">
 				<div class="title">Facebook Page</div>
 			</div>
@@ -153,7 +150,6 @@
 			<div id="vegetable" class="vegetable">
 				<div class="title">Menu</div>
 			</div>
-		</div>
 		<div id="shadow" class="shadow"></div>
 		<div id="front" class="front">
 			<div id="close" class="close"></div>
