@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>菜々竈</title>
-<meta name="keywords" content="">
-<meta name="description" content="">
+<meta name="keywords" content="菜々竈,居酒屋,大阪,阿波座,立売堀,ななかまど,菜々かまど">
+<meta name="description" content="和歌山県産の野菜を中心に、全国各地の旬の魚介類、化学調味料無添加で料理した和食と洋食。その料理と共に日本酒やワインを楽しんで頂ける空間。">
 <link rel="stylesheet" href="css/style.css" media="all">
 <link rel="stylesheet" href="css/bootstrap.css" media="all">
 <link href='http://fonts.googleapis.com/css?family=Averia+Gruesa+Libre' rel='stylesheet' type='text/css'>
@@ -15,8 +15,6 @@
 <script
 	src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
 <script src="js/bootstrap.js"></script>
-<script type="text/javascript"
-	src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script>
 
 	var width,height,center_width,center_height,buttonElements,contentsElements,myLatlng,map,marker;
@@ -24,19 +22,21 @@
 	url[0] = 'img/flower-back0625.jpg';
 	url[1] = 'img/flower-back1071.jpg';
 	url[2] = 'img/IMG_1322.jpg';
-	url[3] = 'img/IMG_1317.JPG';
+	url[3] = 'img/IMG_1317.jpg';
 	$(function(){
 
-
-		buttonElements = "#left_flower,#right_flower,#nanakamado,#name_na,#name_nana,#name_kamado,#vegetable";
-		displayContentsElements = "#right_flower,#nanakamado,#name_na,#name_nana,#name_kamado,#vegetable";
-
+		//buttonElements = "#left_flower,#right_flower,#nanakamado,#name_na,#name_nana,#name_kamado,#vegetable";
+		//displayContentsElements = "#right_flower,#nanakamado,#name_na,#name_nana,#name_kamado,#vegetable";
+		buttonElements = "#left_flower,#right_flower,#nanakamado,#vegetable";
+		displayContentsElements = "#right_flower,#nanakamado,#vegetable";
+		
 		mainContents = "#access,#concept,#menu,#news,#menu3,#menu4";
+		//mainContents = "#access,#concept,#menu";
 		contentsElements = "#front,#contents,#shadow";
 
-		$(buttonElements).fadeTo(0,0);
-		$(contentsElements).hide().fadeOut(0);
-		$(mainContents).hide().fadeOut(0);
+		//$(buttonElements).fadeTo(0,0);
+		//$(contentsElements).hide().fadeOut(0);
+		//$(mainContents).hide().fadeOut(0);
 
 		$(".background").hide().fadeIn(500);
 		$(".logo").hide().fadeIn(3000);
@@ -78,6 +78,7 @@
 		$('#vegetable').click(function() {
 			$("#menu").fadeIn(500);
 		});
+		/*
 		$('#name_na').click(function() {
 			$("#news").fadeIn(500);
 		});
@@ -86,7 +87,7 @@
 		});
 		$('#name_kamado').click(function() {
 			$("#menu4").fadeIn(500);
-		});
+		});*/
 
 		$('#right_flower').click(function() {
 			$("#access").fadeIn(500);
@@ -103,9 +104,9 @@
 
 		var n = Math.floor(Math.random() * url.length);
 		$('#background,#contents').css('background-image', 'url(' + url[n] + ')');
+		$('#background,#contents').css('background-size', 'cover');		
 
 		function buttonPositionChange() {
-			//---リサイズされたときに実行したい処理
 			width = $(window).width();
 			height = $(window).height();
 			map_width = $('#contents').width()*0.8;
@@ -130,13 +131,13 @@
 	<div id="background" class="background">
 			<div id="logo" class="logo"></div>
 			<div id="left_flower" class="left_flower">
-				<div class="title">Facebook Page</div>
+				<div class="title">Facebook Page <span class="glyphicon glyphicon-new-window"></span></div>
 			</div>
 			<div id="right_flower" class="right_flower">
-				<div class="title">Access</div>
+				<div class="title"><span class="glyphicon glyphicon-map-marker"></span> Access</div>
 			</div>
 			<div id="nanakamado" class="nanakamado">
-				<div class="title">Concept</div>
+				<div class="title"><span class="glyphicon glyphicon-leaf"></span> Concept</div>
 			</div>
 			<div id="name_na" class="name_na">
 				<div class="title">News</div>
@@ -148,7 +149,7 @@
 				<div class="title">Menu4</div>
 			</div>
 			<div id="vegetable" class="vegetable">
-				<div class="title">Menu</div>
+				<div class="title"><span class="glyphicon glyphicon-align-justify"></span> Menu</div>
 			</div>
 		<div id="shadow" class="shadow"></div>
 		<div id="front" class="front">
@@ -158,22 +159,24 @@
 			<div id="inner_contents" class="contents">
 				<div id="main" class="main">
 					<div id="access">
-						<h1>Access</h1>
+						<h1><span class="glyphicon glyphicon-map-marker"></span> Access</h1>
 						<h2></h2>
 						<h5>
-							〒 550-0012 大阪府大阪市大阪市西区立売堀 4-4-23 2F<br> <span
-								class="glyphicon glyphicon-earphone"></span> 06-6556-9585
+							〒 550-0012 大阪府大阪市大阪市西区立売堀4-4-23 2F 4-4-23 2F<br><br>
+							<span class="glyphicon glyphicon-earphone"></span> 06-6556-9585
 						</h5>
 						<br>
 						<img src="img/map.jpg" alt="map" class="img-rounded map">
-						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 					</div>
 					<div id="concept">
-						<h1>Concept<h1>
+						<h1><span class="glyphicon glyphicon-leaf"></span> Concept</h1>
+						<img src="img/concept.png" alt="map">
 						<br><br><br><br><br><br><br><br><br><br><br><br><br>
 					</div>
 					<div id="menu">
-						<h1>Menu<h1>
+						<h1><span class="glyphicon glyphicon-align-justify"></span> Menu<h1>
+						<br>
 						<img src="img/menu.jpg" alt="menu" class="img-rounded menu">
 						<br><br><br><br><br><br><br><br><br><br><br><br><br>
 					</div>
