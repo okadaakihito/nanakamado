@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta name="robots" content="noindex" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>菜々竈 管理画面</title>
 	<script
