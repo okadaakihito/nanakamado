@@ -5,7 +5,7 @@ html,body {
 }
 
 #background {
-	background-image: url("../img/bg.jpg");
+//	background-image: url("../img/bg.jpg");
 	background-attachment: fixed;
 	background-position: center;
 	height: 100%;
@@ -25,7 +25,7 @@ html,body {
 }
 
 #front {
-	background-image: url("../img/flower-back1071.jpg");
+//	background-image: url("../img/flower-back1071.jpg");
 	background-attachment: fixed;
 	background-position: center;
 	height: 90%;
@@ -78,6 +78,7 @@ html,body {
 	display: block;
 	position: absolute;
 //	opacity: 0;
+	display:none;
 }
 
 #close {
