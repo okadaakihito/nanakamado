@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>菜々竈</title>
-<meta name="keywords" content="菜々竈,居酒屋,大阪,阿波座,立売堀,ななかまど,菜々かまど">
-<meta name="description" content="和歌山県産の野菜を中心に、全国各地の旬の魚介類、化学調味料無添加で料理した和食と洋食。その料理と共に日本酒やワインを楽しんで頂ける空間。">
+<meta name="viewport" content="width=device-width">
+<meta name="keywords" content="菜々竈,居酒屋,大阪,阿波座,立売堀,ななかまど,菜々かまど,菜々竃,nanakamado">
+<meta name="description" content="大阪市 西区 阿波座にある居酒屋・創作料理の菜々竈です。和歌山県産の野菜を中心に、全国各地の旬の魚介類、化学調味料無添加で料理した和食と洋食。その料理と共に日本酒やワインを楽しんで頂ける空間。">
 <link rel="stylesheet" href="css/style.css" media="all">
 <link rel="stylesheet" href="css/bootstrap.css" media="all">
 <link href='http://fonts.googleapis.com/css?family=Averia+Gruesa+Libre' rel='stylesheet' type='text/css'>
@@ -15,6 +16,7 @@
 <script
 	src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/jquery.big-slide.js"></script>
 <script>
 
 	var width,height,center_width,center_height,buttonElements,contentsElements,myLatlng,map,marker;
@@ -28,7 +30,7 @@
 		//buttonElements = "#left_flower,#right_flower,#nanakamado,#name_na,#name_nana,#name_kamado,#vegetable";
 		//displayContentsElements = "#right_flower,#nanakamado,#name_na,#name_nana,#name_kamado,#vegetable";
 		buttonElements = "#left_flower,#right_flower,#nanakamado,#vegetable";
-		displayContentsElements = "#right_flower,#nanakamado,#vegetable";
+		displayContentsElements = "#right_flower,#nanakamado,#vegetable,#conceptMenu,#accessMenu,#menuMenu";
 		
 		mainContents = "#access,#concept,#menu,#news,#menu3,#menu4";
 		//mainContents = "#access,#concept,#menu";
@@ -40,6 +42,15 @@
 
 		$(".background").hide().fadeIn(500);
 		$(".logo").hide().fadeIn(3000);
+		
+		if ((navigator.userAgent.indexOf('iPhone') > 0 
+			&& navigator.userAgent.indexOf('iPad') == -1) 
+			|| navigator.userAgent.indexOf('iPod') > 0 
+			|| navigator.userAgent.indexOf('Android') > 0) {
+		    $(".menu-link").fadeIn(3000);
+		}
+
+		$('.menu-link').bigSlide();
 
 		buttonPositionChange();
 
@@ -82,6 +93,7 @@
 		$('#name_na').click(function() {
 			$("#news").fadeIn(500);
 		});
+		
 		$('#name_nana').click(function() {
 			$("#menu3").fadeIn(500);
 		});
@@ -97,7 +109,29 @@
 
 			$(contentsElements).fadeIn(500);
 		})
+		//////
+		$('#conceptMenu').click(function() {
+			$("#concept").fadeIn(500);
+			$('.menu-link').trigger('click');
+		});
 
+		$('#menuMenu').click(function() {
+			$("#menu").fadeIn(500);
+			$('.menu-link').trigger('click');
+		});
+		
+		$('#accessMenu').click(function() {
+			$("#access").fadeIn(500);
+			$('.menu-link').trigger('click');
+		});
+		
+		$('#facebookMenu').attr("target","_blank");
+
+		$('#facebookMenu').click(function() {
+			window.open('https://www.facebook.com/pages/%E8%8F%9C%E3%80%85%E7%AB%88/449462391846481?fref=ts', '_blank');
+			$('.menu-link').trigger('click');
+		});
+		/////
 		$(window).resize(function(){
 			buttonPositionChange();
 		})
@@ -128,72 +162,81 @@
 </script>
 </head>
 <body class="body">
-	<div id="background" class="background">
-			<div id="logo" class="logo"></div>
-			<div id="left_flower" class="left_flower">
-				<div class="title">Facebook Page <span class="glyphicon glyphicon-new-window"></span></div>
-			</div>
-			<div id="right_flower" class="right_flower">
-				<div class="title"><span class="glyphicon glyphicon-map-marker"></span> Access</div>
-			</div>
-			<div id="nanakamado" class="nanakamado">
-				<div class="title"><span class="glyphicon glyphicon-leaf"></span> Concept</div>
-			</div>
-			<div id="name_na" class="name_na">
-				<div class="title">News</div>
-			</div>
-			<div id="name_nana" class="name_nana">
-				<div class="title">Menu3</div>
-			</div>
-			<div id="name_kamado" class="name_kamado">
-				<div class="title">Menu4</div>
-			</div>
-			<div id="vegetable" class="vegetable">
-				<div class="title"><span class="glyphicon glyphicon-align-justify"></span> Menu</div>
-			</div>
-		<div id="shadow" class="shadow"></div>
-		<div id="front" class="front">
-			<div id="close" class="close"></div>
+	<nav id="slideMenu" class="panel" role="navigation">
+	    <ul>
+	        <li><div id="conceptMenu"><span class="glyphicon glyphicon-leaf"></span> Concept</div></li>
+	        <li><div id="menuMenu"><span class="glyphicon glyphicon-align-justify"></span> Menu</div></li>
+	        <li><div id="accessMenu"><span class="glyphicon glyphicon-map-marker"></span> Access</div></li>
+	        <li><div id="facebookMenu">Facebook Page <span class="glyphicon glyphicon-new-window"></div></li>
+	    </ul>
+	</nav>
+	<div id="background" class="wrap push background">
+		<a href="#menu" class="menu-link"><span class="glyphicon glyphicon-align-justify"></a>
+		<div id="logo" class="logo"></div>
+		<div id="left_flower" class="left_flower">
+			<div class="title">Facebook Page <span class="glyphicon glyphicon-new-window"></span></div>
 		</div>
-		<div id="contents" class="contents">
-			<div id="inner_contents" class="contents">
-				<div id="main" class="main">
-					<div id="access">
-						<h1><span class="glyphicon glyphicon-map-marker"></span> Access</h1>
-						<h2></h2>
-						<h5>
-							〒 550-0012 大阪府大阪市大阪市西区立売堀4-4-23 2F<br><br>
-							<span class="glyphicon glyphicon-earphone"></span> 06-6556-9585
-						</h5>
-						<br>
-						<img src="img/map.jpg" alt="map" class="img-rounded map">
-						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-					</div>
-					<div id="concept">
-						<h1><span class="glyphicon glyphicon-leaf"></span> Concept</h1>
-						<img src="img/concept.png" alt="map">
-						<br><br><br><br><br><br><br><br><br><br><br><br><br>
-					</div>
-					<div id="menu">
-						<h1><span class="glyphicon glyphicon-align-justify"></span> Menu<h1>
-						<br>
-						<img src="img/menu.jpg" alt="menu" class="img-rounded menu">
-						<br><br><br><br><br><br><br><br><br><br><br><br><br>
-					</div>
-					<div id="news">
-						<h1>News<h1>
-						<br><br><br><br><br><br><br><br><br><br><br><br><br>
-					</div>
-					<div id="menu3">
-						<h1>Menu3<h1>
-						<br><br><br><br><br><br><br><br><br><br><br><br><br>
-					</div>
-					<div id="menu4">
-						<h1>Menu4<h1>
-						<br><br><br><br><br><br><br><br><br><br><br><br><br>
-					</div>
+		<div id="right_flower" class="right_flower">
+			<div class="title"><span class="glyphicon glyphicon-map-marker"></span> Access</div>
+		</div>
+		<div id="nanakamado" class="nanakamado">
+			<div class="title"><span class="glyphicon glyphicon-leaf"></span> Concept</div>
+		</div>
+		<div id="name_na" class="name_na">
+			<div class="title">News</div>
+		</div>
+		<div id="name_nana" class="name_nana">
+			<div class="title">Menu3</div>
+		</div>
+		<div id="name_kamado" class="name_kamado">
+			<div class="title">Menu4</div>
+		</div>
+		<div id="vegetable" class="vegetable">
+			<div class="title"><span class="glyphicon glyphicon-align-justify"></span> Menu</div>
+		</div>
+	<div id="shadow" class="shadow"></div>
+	<div id="front" class="front">
+		<div id="close" class="close"></div>
+	</div>
+	<div id="contents" class="contents">
+		<div id="inner_contents" class="contents">
+			<div id="main" class="main">
+				<div id="access">
+					<h1><span class="glyphicon glyphicon-map-marker"></span> Access</h1>
+					<h2></h2>
+					<h5>
+						〒 550-0012 大阪府大阪市大阪市西区立売堀4-4-23 2F<br><br>
+						<span class="glyphicon glyphicon-earphone"></span> 06-6556-9585
+					</h5>
+					<br>
+					<img src="img/map.jpg" alt="map" class="img-rounded map">
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+				</div>
+				<div id="concept">
+					<h1><span class="glyphicon glyphicon-leaf"></span> Concept</h1>
+					<img src="img/concept.png" alt="map">
+					<br><br><br><br><br><br><br><br><br><br><br><br><br>
+				</div>
+				<div id="menu">
+					<h1><span class="glyphicon glyphicon-align-justify"></span> Menu<h1>
+					<br>
+					<img src="img/menu.jpg" alt="menu" class="img-rounded menu">
+					<br><br><br><br><br><br><br><br><br><br><br><br><br>
+				</div>
+				<div id="news">
+					<h1>News<h1>
+					<br><br><br><br><br><br><br><br><br><br><br><br><br>
+				</div>
+				<div id="menu3">
+					<h1>Menu3<h1>
+					<br><br><br><br><br><br><br><br><br><br><br><br><br>
+				</div>
+				<div id="menu4">
+					<h1>Menu4<h1>
+					<br><br><br><br><br><br><br><br><br><br><br><br><br>
 				</div>
 			</div>
 		</div>
+	</div>
 </body>
 </html>

@@ -1,7 +1,6 @@
 html,body {
 	height: 100%;
 	margin: 0;
-	min-width: 1024px;
 }
 
 #background {
@@ -522,4 +521,82 @@ div.form-group {
 #menu3,
 #menu4 {
 	display: none;
+}
+
+nav.panel {
+    position: fixed;
+    right: -15.625em; /*left or right and the width of your navigation panel*/
+    width: 15.625em; /*should match the above value*/
+    background-color: #000000;
+    border-radius: 0;
+}
+
+nav.panel ul {
+  border-top: 2px solid #34495D;
+}
+
+nav.panel div{
+  display: block;
+  border-bottom: 2px solid #34495D;
+  padding: 1em;
+  color: #ffffff;
+}
+
+nav.panel div:link,
+nav.panel div:visited {
+  color: #fff;
+}
+
+nav.panel div:hover,
+nav.panel div:active {
+  background: #333333;
+}
+
+nav.nav-icon {
+  margin-right: 6px;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+nav div {
+  text-decoration: none;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+nav div:link,
+nav div:visited {
+  color: #25B89A;
+}
+
+nav div:hover,
+nav div:active {
+//  color: #16a085;
+}
+
+.wrap { 
+    position: relative; 
+}
+
+.menu-link {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    font-size: 30px;
+    color: #333333;
+    display:none;
+}
+
+.menu-link:hover,
+.menu-link:active
+ {
+    color: #999999;
 }
