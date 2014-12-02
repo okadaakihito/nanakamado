@@ -190,7 +190,7 @@
 			},
 			function (data) {
 				$.each(data.responseData.feed.entries, function(i, item){
-				$('#facebook').append('<li><p class="fb_comm" style="background-color:#ffffff;padding:20px;"><span class="fb_date">'+
+				$('#facebook').append('<li><p class="fb_comm" style="background-color:#ffffff;padding:20px;margin:20px;"><span class="fb_date">'+
 				formatData(item.publishedDate)
 				+'</span>' + item.content + '</p></li>');
 				});
@@ -203,10 +203,10 @@
 	<nav id="slideMenu" class="panel" role="navigation">
 	    <ul>
 	        <li><div id="conceptMenu"><span class="glyphicon glyphicon-leaf"></span> Concept</div></li>
-	        <li><div id="newsMenu"><span class="glyphicon glyphicon-info-sign"></span> News</div></li>
+	        <li><div id="newsMenu"><span class="glyphicon glyphicon-send"></span> News</div></li>
 	        <li><div id="menuMenu"><span class="glyphicon glyphicon-book"></span> Menu</div></li>
 	        <li><div id="accessMenu"><span class="glyphicon glyphicon-map-marker"></span> Access</div></li>
-	        <li><div id="facebookMenu">Facebook Page <span class="glyphicon glyphicon-new-window"></div></li>
+	        <li><div id="facebookMenu">Facebook Page <span class="glyphicon glyphicon-new-window"></span></div></li>
 	    </ul>
 	</nav>
 	<div id="background" class="wrap push background">
@@ -222,7 +222,7 @@
 			<div class="title"><span class="glyphicon glyphicon-leaf"></span> Concept</div>
 		</div>
 		<div id="name_na" class="name_na">
-			<div class="title"><span class="glyphicon glyphicon-info-sign"></span> News</div>
+			<div class="title"><span class="glyphicon glyphicon-send"></span> News</div>
 		</div>
 		<div id="name_nana" class="name_nana">
 			<div class="title"></div>
@@ -242,34 +242,49 @@
 			<div id="main" class="main">
 				<div id="access">
 					<h1><span class="glyphicon glyphicon-map-marker"></span> Access</h1>
-					<h2></h2>
-					<h5>
+					<p class="fb_comm" style="background-color:#ffffff;padding:20px;margin:20px;width:80%;">
 						〒 550-0012 大阪府大阪市大阪市西区立売堀4-4-23 2F<br><br>
-						<span class="glyphicon glyphicon-earphone"></span> 06-6556-9585
-					</h5>
-					<br>
-					<img src="img/map.jpg" alt="map" class="img-rounded map">
-					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+						<span class="glyphicon glyphicon-asterisk" style="font-size:10px;"></span> 阿波座駅から276m<br><br>
+						<span class="glyphicon glyphicon-asterisk" style="font-size:10px;"></span> 地下鉄千日前線・中央線阿波座駅２番出口よりあみだ池筋を南へ２つめ路地を右になります<br><br><br><br>
+						<span class="glyphicon glyphicon-earphone"></span> 06-6556-9585<br><br><br><br>
+						<b>営業時間</b><br><br>
+						12:00～14:00<br><br>
+						18:00～24:00<br><br>
+						<span class="glyphicon glyphicon-asterisk" style="font-size:10px;"></span> 日曜日・祝日は、ランチは休業となります<br><br>
+						<br><br>
+						<b>定休日</b><br><br>
+						不定休<br><br>
+						<span class="glyphicon glyphicon-asterisk" style="font-size:10px;"></span> 月二回程度<br><br>
+						<span class="glyphicon glyphicon-asterisk" style="font-size:10px;"></span> お電話でご確認ください<br><br>
+						<br>
+						<img src="img/map.jpg" alt="map" class="img-rounded map">
+						<br><br>
+						<a href="https://maps.google.co.jp/maps?es_sm=119&um=1&ie=UTF-8&q=%E8%8F%9C%E3%80%85%E7%AB%88&fb=1&gl=jp&hq=%E8%8F%9C%E3%80%85%E7%AB%88&cid=6031834777810485408&sa=X&ei=yO19VJn1Lqj3mQW5loA4&ved=0CCMQrwswAA" target="_blank" >Google Mapでみる <span class="glyphicon glyphicon-new-window"></span></a>
+					</p>
+					<br><br><br><br><br><br><br><br><br><br>
 				</div>
 				<div id="concept">
 					<h1><span class="glyphicon glyphicon-leaf"></span> Concept</h1>
-					<img src="img/concept.png" alt="map">
-					<br><br><br><br><br><br><br><br><br><br><br><br><br>
+					<p class="fb_comm" style="background-color:#ffffff;padding:20px;margin:20px;">
+						<img src="img/concept.png" alt="map">
+					</p>
+					<br><br><br><br><br><br><br><br><br>
 				</div>
 				<div id="menu">
 					<h1><span class="glyphicon glyphicon-book"></span> Menu</h1>
-					<br>
-					<img src="img/menu.jpg" alt="menu" class="img-rounded menu">
-					<br><br><br><br><br><br><br><br><br><br><br><br><br>
+					<p class="fb_comm" style="background-color:#ffffff;padding:20px;margin:20px;">
+						<img src="img/menu.png" alt="menu" class="img-rounded menu">
+					</p>
+					<br><br><br><br><br><br><br><br><br>
 				</div>
 				<div id="news">
-					<h1><span class="glyphicon glyphicon-info-sign"></span> News</h1>
+					<h1><span class="glyphicon glyphicon-send"></span> News</h1>
 					<dl id="info">
 					  <dd>
 					    <ul id="facebook"></ul>
 					  </dd>
 					</dl>
-				</div>
+				</div><br><br><br><br><br><br><br><br>
 				<div id="menu3">
 					<h1><h1>
 					<br><br><br><br><br><br><br><br><br><br><br><br><br>
