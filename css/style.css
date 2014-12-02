@@ -588,7 +588,7 @@ nav div:active {
 
 .menu-link {
     position: absolute;
-    right: 30px;
+    left: 30px;
     top: 20px;
     font-size: 30px;
     color: #333333;
@@ -599,4 +599,30 @@ nav div:active {
 .menu-link:active
  {
     color: #999999;
+}
+
+#info{
+  margin: 20px;
+  width: 60%;
+  min-width: 300px;
+  max-width: 600px;
+}
+dt{
+  font-weight: bold;
+  font-size: 16px;
+}
+dd{
+  margin-top: 40px;
+  font-size: 12px;
+}
+.fb_date{
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.fb_comm{
+  display: block;
+  margin-top: 5px;
+  line-height: 1.6;
 }

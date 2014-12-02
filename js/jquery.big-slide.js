@@ -9,7 +9,7 @@
     var settings = $.extend({
       'menu': ('#slideMenu'),
       'push': ('.push'),
-      'side': 'right',
+      'side': 'left',
       'menuWidth': '15.625em',
       'speed': '300'
     }, options);
