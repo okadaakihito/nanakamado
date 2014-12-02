@@ -170,11 +170,6 @@ html,body {
 	cursor: pointer;
 }
 
-a {
-	color: #7C9907;
-	text-decoration: none;
-}
-
 div h1 {
 	margin: 0;
 	padding-bottom: 10px;
@@ -603,26 +598,41 @@ nav div:active {
 
 #info{
   margin: 20px;
-  width: 60%;
+  width: 80%;
   min-width: 300px;
-  max-width: 600px;
+  max-width: 900px;
 }
+
 dt{
   font-weight: bold;
   font-size: 16px;
 }
+
 dd{
   margin-top: 40px;
   font-size: 12px;
 }
+
 .fb_date{
   display: block;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
 .fb_comm{
   display: block;
   margin-top: 5px;
   line-height: 1.6;
+}
+
+#info img {
+	zoom: 1.5;
+	margin:10px;
+}
+
+#info a:not(.menu-link) {
+	color: #7C9907;
+	text-decoration: none;
+  	pointer-events : none;
 }
