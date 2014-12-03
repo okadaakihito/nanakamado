@@ -134,7 +134,7 @@ html,body {
 	display: block;
 	position: absolute;
 	opacity: 0;
-	//cursor: pointer;
+	cursor: pointer;
 }
 
 .name_nana {
@@ -624,6 +624,7 @@ dd{
   display: block;
   margin-top: 5px;
   line-height: 1.6;
+  font-size: medium;
 }
 
 #info img {
@@ -635,4 +636,12 @@ dd{
 	color: #7C9907;
 	text-decoration: none;
   	pointer-events : none;
+}
+
+#likes {
+	opacity: 0.8;
+	right: 15px;
+	bottom: 10px;
+	position: fixed;
+	z-index: 1;
 }

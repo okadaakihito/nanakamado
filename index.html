@@ -8,6 +8,7 @@
 <meta name="description" content="大阪市 西区 阿波座にある居酒屋・創作料理の菜々竈です。和歌山県産の野菜を中心に、全国各地の旬の魚介類、化学調味料無添加で料理した和食と洋食。その料理と共に日本酒やワインを楽しんで頂ける空間。">
 <link rel="stylesheet" href="css/style.css" media="all">
 <link rel="stylesheet" href="css/bootstrap.css" media="all">
+<link rel="stylesheet" href="css/social-likes_classic.css">
 <link href='http://fonts.googleapis.com/css?family=Averia+Gruesa+Libre' rel='stylesheet' type='text/css'>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -17,6 +18,7 @@
 	src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.big-slide.js"></script>
+<script src="js/social-likes.min.js"></script>
 <script>
 
 	var width,height,center_width,center_height,buttonElements,contentsElements,myLatlng,map,marker;
@@ -51,6 +53,7 @@
 
 		$(".background").hide().fadeIn(500);
 		$(".logo").hide().fadeIn(3000);
+		$(".social-likes").hide().fadeIn(3000);
 
 		buttonPositionChange();
 
@@ -196,6 +199,14 @@
 				});
 			}
 		);
+
+		$('#likes').socialLikes({
+		    url: 'http://7kamado.com/',
+		    title: '菜々竈',
+		    data: {
+		        media: '/img/logo.png'
+		    }
+		});
 	});
 </script>
 </head>
@@ -206,14 +217,19 @@
 	        <li><div id="newsMenu"><span class="glyphicon glyphicon-send"></span> News</div></li>
 	        <li><div id="menuMenu"><span class="glyphicon glyphicon-book"></span> Menu</div></li>
 	        <li><div id="accessMenu"><span class="glyphicon glyphicon-map-marker"></span> Access</div></li>
-	        <li><div id="facebookMenu">Facebook Page <span class="glyphicon glyphicon-new-window"></span></div></li>
+	        <li><div id="facebookMenu"><span class="glyphicon glyphicon-thumbs-up"></span> Facebook Page <span class="glyphicon glyphicon-new-window" style="font-size:10px;"></span></div></li>
 	    </ul>
 	</nav>
+	<div class="social-likes" id="likes" data-url="http://7kamado.com/" data-title="菜々竈">
+		<div class="facebook" title="Share link on Facebook">Facebook</div>
+		<div class="twitter" title="Share link on Twitter">Twitter</div>
+		<div class="plusone" title="Share link on Google+">Google+</div>
+	</div>
 	<div id="background" class="wrap push background">
 		<a href="#menu" class="menu-link"><span class="glyphicon glyphicon-align-justify"></a>
 		<div id="logo" class="logo"></div>
 		<div id="left_flower" class="left_flower">
-			<div class="title">Facebook Page <span class="glyphicon glyphicon-new-window"></span></div>
+			<div class="title"><span class="glyphicon glyphicon-thumbs-up"></span> Facebook Page</div>
 		</div>
 		<div id="right_flower" class="right_flower">
 			<div class="title"><span class="glyphicon glyphicon-map-marker"></span> Access</div>
@@ -233,68 +249,74 @@
 		<div id="vegetable" class="vegetable">
 			<div class="title"><span class="glyphicon glyphicon-book"></span> Menu</div>
 		</div>
-	<div id="shadow" class="shadow"></div>
-	<div id="front" class="front">
-		<div id="close" class="close"></div>
-	</div>
-	<div id="contents" class="contents">
-		<div id="inner_contents" class="contents">
-			<div id="main" class="main">
-				<div id="access">
-					<h1><span class="glyphicon glyphicon-map-marker"></span> Access</h1>
-					<p class="fb_comm" style="background-color:#ffffff;padding:20px;margin:20px;width:80%;">
-						〒 550-0012 大阪府大阪市大阪市西区立売堀4-4-23 2F<br><br>
-						<span class="glyphicon glyphicon-asterisk" style="font-size:10px;"></span> 阿波座駅から276m<br><br>
-						<span class="glyphicon glyphicon-asterisk" style="font-size:10px;"></span> 地下鉄千日前線・中央線阿波座駅２番出口よりあみだ池筋を南へ２つめ路地を右になります<br><br><br><br>
-						<span class="glyphicon glyphicon-earphone"></span> 06-6556-9585<br><br><br><br>
-						<b>営業時間</b><br><br>
-						12:00～14:00<br><br>
-						18:00～24:00<br><br>
-						<span class="glyphicon glyphicon-asterisk" style="font-size:10px;"></span> 日曜日・祝日は、ランチは休業となります<br><br>
-						<br><br>
-						<b>定休日</b><br><br>
-						不定休<br><br>
-						<span class="glyphicon glyphicon-asterisk" style="font-size:10px;"></span> 月二回程度<br><br>
-						<span class="glyphicon glyphicon-asterisk" style="font-size:10px;"></span> お電話でご確認ください<br><br>
-						<br>
-						<img src="img/map.jpg" alt="map" class="img-rounded map">
-						<br><br>
-						<a href="https://maps.google.co.jp/maps?es_sm=119&um=1&ie=UTF-8&q=%E8%8F%9C%E3%80%85%E7%AB%88&fb=1&gl=jp&hq=%E8%8F%9C%E3%80%85%E7%AB%88&cid=6031834777810485408&sa=X&ei=yO19VJn1Lqj3mQW5loA4&ved=0CCMQrwswAA" target="_blank" >Google Mapでみる <span class="glyphicon glyphicon-new-window"></span></a>
-					</p>
-					<br><br><br><br><br><br><br><br><br><br>
-				</div>
-				<div id="concept">
-					<h1><span class="glyphicon glyphicon-leaf"></span> Concept</h1>
-					<p class="fb_comm" style="background-color:#ffffff;padding:20px;margin:20px;">
-						<img src="img/concept.png" alt="map">
-					</p>
-					<br><br><br><br><br><br><br><br><br>
-				</div>
-				<div id="menu">
-					<h1><span class="glyphicon glyphicon-book"></span> Menu</h1>
-					<p class="fb_comm" style="background-color:#ffffff;padding:20px;margin:20px;">
+		<div id="shadow" class="shadow"></div>
+		<div id="front" class="front">
+			<div id="close" class="close"></div>
+		</div>
+		<div id="contents" class="contents">
+			<div id="inner_contents" class="contents">
+				<div id="main" class="main">
+					<div id="access">
+						<h1><span class="glyphicon glyphicon-map-marker"></span> Access</h1>
+						<p class="fb_comm" style="background-color:#ffffff;padding:20px;margin:20px;width:80%;">
+							<img src="img/logoname.png"><br><br>
+							〒 550-0012 大阪府大阪市大阪市西区立売堀4-4-23 2F<br><br>
+							・ 阿波座駅から276m<br>
+							・ 地下鉄千日前線・中央線阿波座駅２番出口よりあみだ池筋を南へ。２つめの路地を右に入ったところになります<br><br>
+							<span class="glyphicon glyphicon-earphone"></span> 06-6556-9585<br><br>
+							<b><span class="glyphicon glyphicon-time"></span> 営業時間</b><br>
+							12:00～14:00<br>
+							18:00～24:00<br>
+							・ 日曜日・祝日は、ランチは休業となります<br>
+							<br>
+							<b><span class="glyphicon glyphicon-bell"></span> 定休日</b><br>
+							不定休<br>
+							・ 月二回程度<br>
+							・ お電話でお問い合わせください<br>
+							<br>
+							<img src="img/map.jpg" alt="map" class="img-rounded map">
+							<br><br>
+							<a href="https://maps.google.co.jp/maps?es_sm=119&um=1&ie=UTF-8&q=%E8%8F%9C%E3%80%85%E7%AB%88&fb=1&gl=jp&hq=%E8%8F%9C%E3%80%85%E7%AB%88&cid=6031834777810485408&sa=X&ei=yO19VJn1Lqj3mQW5loA4&ved=0CCMQrwswAA" target="_blank" ><span class="glyphicon glyphicon-map-marker"></span> Google Mapでみる <span class="glyphicon glyphicon-new-window" style="font-size:10px;"></span></a>
+						</p>
+						<br><br><br><br><br><br><br><br><br><br>
+					</div>
+					<div id="concept">
+						<h1><span class="glyphicon glyphicon-leaf"></span> Concept</h1>
+						<p class="fb_comm" style="background-color:#ffffff;padding:20px;margin:20px;">
+							<img src="img/logo.png" alt="concept" style="width:300px;display:block;margin-left:auto;margin-right:auto;margin-top:50px;">
+							<span style="display:block;margin-left:auto;margin-right:auto;">
+								<img src="img/concept.png" alt="concept" title="和歌山県産の新鮮な野菜を中心に、全国各地の旬の魚介類、世界各地の食材を使い丹精を込めて作り上げた料理をワインや日本酒と共にお楽しみください。"><br>
+								<img src="img/wines.png" alt="wines" style="width:200px;margin:10px;">
+								<img src="img/tiles.png" alt="tiles" style="width:200px;margin:10px;">
+								<img src="img/pig.png" alt="pig" style="width:200px;margin:10px;">
+							</span>
+						</p>
+						<br><br><br><br><br><br><br><br><br>
+					</div>
+					<div id="menu">
+						<h1><span class="glyphicon glyphicon-book"></span> Menu</h1><br>
 						<img src="img/menu.png" alt="menu" class="img-rounded menu">
-					</p>
-					<br><br><br><br><br><br><br><br><br>
-				</div>
-				<div id="news">
-					<h1><span class="glyphicon glyphicon-send"></span> News</h1>
-					<dl id="info">
-					  <dd>
-					    <ul id="facebook"></ul>
-					  </dd>
-					</dl>
-				</div><br><br><br><br><br><br><br><br>
-				<div id="menu3">
-					<h1><h1>
-					<br><br><br><br><br><br><br><br><br><br><br><br><br>
-				</div>
-				<div id="menu4">
-					<h1><h1>
-					<br><br><br><br><br><br><br><br><br><br><br><br><br>
+						<br><br><br><br><br><br><br><br><br>
+					</div>
+					<div id="news">
+						<h1><span class="glyphicon glyphicon-send"></span> News</h1>
+						<dl id="info">
+						  <dd>
+						    <ul id="facebook"></ul>
+						  </dd>
+						</dl>
+					</div><br><br><br><br><br><br><br><br>
+					<div id="menu3">
+						<h1><h1>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br>
+					</div>
+					<div id="menu4">
+						<h1><h1>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>	
 </body>
 </html>
