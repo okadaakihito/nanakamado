@@ -87,14 +87,17 @@
 
 		$('#nanakamado').click(function() {
 			$("#concept").fadeIn(500);
+			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-leaf\"></span> Concept");
 		});
 
 		$('#vegetable').click(function() {
 			$("#menu").fadeIn(500);
+			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-book\"></span> Menu");
 		});
 		
 		$('#name_na').click(function() {
 			$("#news").fadeIn(500);
+			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-send\"></span> News");
 		});
 		/*
 		$('#name_nana').click(function() {
@@ -106,6 +109,7 @@
 
 		$('#right_flower').click(function() {
 			$("#access").fadeIn(500);
+			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-map-marker\"></span> Access");
 		});
 
 		$(displayContentsElements).click(function(){
@@ -114,21 +118,25 @@
 		//////
 		$('#conceptMenu').click(function() {
 			$("#concept").fadeIn(500);
+			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-leaf\"></span> Concept");
 			$('.menu-link').trigger('click');
 		});
 
 		$('#menuMenu').click(function() {
 			$("#menu").fadeIn(500);
+			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-book\"></span> Menu");
 			$('.menu-link').trigger('click');
 		});
 		
 		$('#accessMenu').click(function() {
 			$("#access").fadeIn(500);
+			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-map-marker\"></span> Access");
 			$('.menu-link').trigger('click');
 		});
 
 		$('#newsMenu').click(function() {
 			$("#news").fadeIn(500);
+			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-send\"></span> News");
 			$('.menu-link').trigger('click');
 		});
 		
@@ -204,7 +212,7 @@
 		    url: 'http://7kamado.com/',
 		    title: '菜々竈',
 		    data: {
-		        media: '/img/logo.png'
+		        media: 'img/logo.png'
 		    }
 		});
 	});
@@ -255,9 +263,9 @@
 		</div>
 		<div id="contents" class="contents">
 			<div id="inner_contents" class="contents">
+				<h1 id="mainH1"></h1>
 				<div id="main" class="main">
 					<div id="access">
-						<h1><span class="glyphicon glyphicon-map-marker"></span> Access</h1>
 						<p class="fb_comm" style="background-color:#ffffff;padding:20px;margin:20px;width:80%;">
 							<img src="img/logoname.png"><br><br>
 							〒 550-0012 大阪府大阪市大阪市西区立売堀4-4-23 2F<br><br>
@@ -281,11 +289,10 @@
 						<br><br><br><br><br><br><br><br><br><br>
 					</div>
 					<div id="concept">
-						<h1><span class="glyphicon glyphicon-leaf"></span> Concept</h1>
 						<p class="fb_comm" style="background-color:#ffffff;padding:20px;margin:20px;">
 							<img src="img/logo.png" alt="concept" style="width:300px;display:block;margin-left:auto;margin-right:auto;margin-top:50px;">
 							<span style="display:block;margin-left:auto;margin-right:auto;">
-								<img src="img/concept.png" alt="concept" title="和歌山県産の新鮮な野菜を中心に、全国各地の旬の魚介類、世界各地の食材を使い丹精を込めて作り上げた料理をワインや日本酒と共にお楽しみください。"><br>
+								<img src="img/concept.png" alt="和歌山県産の新鮮な野菜を中心に、全国各地の旬の魚介類、世界各地の食材を使い丹精を込めて作り上げた料理をワインや日本酒と共にお楽しみください。"><br>
 								<img src="img/wines.png" alt="wines" style="width:200px;margin:10px;">
 								<img src="img/tiles.png" alt="tiles" style="width:200px;margin:10px;">
 								<img src="img/pig.png" alt="pig" style="width:200px;margin:10px;">
@@ -294,12 +301,11 @@
 						<br><br><br><br><br><br><br><br><br>
 					</div>
 					<div id="menu">
-						<h1><span class="glyphicon glyphicon-book"></span> Menu</h1><br>
+						<br>
 						<img src="img/menu.png" alt="menu" class="img-rounded menu">
 						<br><br><br><br><br><br><br><br><br>
 					</div>
 					<div id="news">
-						<h1><span class="glyphicon glyphicon-send"></span> News</h1>
 						<dl id="info">
 						  <dd>
 						    <ul id="facebook"></ul>
