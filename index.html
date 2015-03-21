@@ -210,7 +210,7 @@
 			},
 			function (data) {
 				$.each(data.responseData.feed.entries, function(i, item){
-				$('#facebook').append('<li><p class="fb_comm"><span class="fb_date">'+
+				$('#facebook').append('<li><p class="fb_comm fb_textarea"><span class="fb_date">'+
 				formatData(item.publishedDate)
 				+'</span>' + item.content + '</p></li>');
 				});

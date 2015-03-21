@@ -635,6 +635,12 @@ dd{
   width:90%;
 }
 
+.fb_textarea {
+     border-radius: 6px; /* CSS3‘ˆÄ */ 
+     -webkit-border-radius: 6px; /* Safari,Google Chrome—p */ 
+    -moz-border-radius: 6px; /* Firefox—p */ 
+}
+
 #info img {
 	zoom: 1.5;
 	margin:10px;
