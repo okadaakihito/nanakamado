@@ -210,7 +210,7 @@
 			},
 			function (data) {
 				$.each(data.responseData.feed.entries, function(i, item){
-				$('#facebook').append('<li><p class="fb_comm" style="background-color:#ffffff;padding:20px;margin:20px;"><span class="fb_date">'+
+				$('#facebook').append('<li><p class="fb_comm"><span class="fb_date">'+
 				formatData(item.publishedDate)
 				+'</span>' + item.content + '</p></li>');
 				});
@@ -275,7 +275,7 @@
 				<h1 id="mainH1"></h1>
 				<div id="main" class="main">
 					<div id="access">
-						<p class="fb_comm" style="background-color:#ffffff;padding:20px;margin:20px;width:80%;">
+						<p class="fb_comm">
 							<img src="img/logoname.png"><br><br>
 							〒 550-0012 大阪府大阪市大阪市西区立売堀4-4-23 2F<br><br>
 							・ 阿波座駅から276m<br>
@@ -298,13 +298,13 @@
 						<br><br><br><br><br><br><br><br><br><br>
 					</div>
 					<div id="concept">
-						<p class="fb_comm" style="background-color:#ffffff;padding:20px;margin:20px;">
-							<img src="img/logo.png" alt="concept" style="width:300px;display:block;margin-left:auto;margin-right:auto;margin-top:50px;">
+						<p class="fb_comm">
+							<img src="img/logo.png" alt="concept" class="concept">
 							<span style="display:block;margin-left:auto;margin-right:auto;">
 								<img src="img/concept.png" alt="和歌山県産の新鮮な野菜を中心に、全国各地の旬の魚介類、世界各地の食材を使い丹精を込めて作り上げた料理をワインや日本酒と共にお楽しみください。"><br>
-								<img src="img/wines.png" alt="wines" style="width:200px;margin:10px;">
-								<img src="img/tiles.png" alt="tiles" style="width:200px;margin:10px;">
-								<img src="img/pig.png" alt="pig" style="width:200px;margin:10px;">
+								<img src="img/wines.png" alt="wines" class="concept-img">
+								<img src="img/tiles.png" alt="tiles" class="concept-img">
+								<img src="img/pig.png" alt="pig" class="concept-img">
 							</span>
 						</p>
 						<br><br><br><br><br><br><br><br><br>
