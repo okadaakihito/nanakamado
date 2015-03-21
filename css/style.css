@@ -525,17 +525,18 @@ nav.panel {
     position: fixed;
     right: -15.625em; /*left or right and the width of your navigation panel*/
     width: 15.625em; /*should match the above value*/
-    background-color: #000000;
+    //background-color: #000000;
+    background-image: url("../img/A9.png");
     border-radius: 0;
 }
 
 nav.panel ul {
-  border-top: 2px solid #34495D;
+  border-top: 2px solid #999999;
 }
 
 nav.panel div{
   display: block;
-  border-bottom: 2px solid #34495D;
+  border-bottom: 2px solid #999999;
   padding: 1em;
   color: #ffffff;
 }
@@ -589,7 +590,7 @@ nav div:active {
     left: 30px;
     top: 20px;
     font-size: 30px;
-    color: #333333;
+    color: #16160e;
     display:none;
 }
 
@@ -669,6 +670,12 @@ dd{
 }
 
 .concept-img {
-    width:200px;
+    width:190px;
     margin:10px;
+}
+
+.concept-text {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
 }
