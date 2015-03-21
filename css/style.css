@@ -628,6 +628,11 @@ dd{
   margin-top: 5px;
   line-height: 1.6;
   font-size: medium;
+  // background-color:#ffffff;
+  background-image: url("../img/paper-f1.png");
+  padding:20px;
+  margin:20px;
+  width:90%;
 }
 
 #info img {
@@ -647,4 +652,17 @@ dd{
 	bottom: 10px;
 	position: fixed;
 	z-index: 1;
+}
+
+.concept {
+    width:300px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:50px;
+}
+
+.concept-img {
+    width:200px;
+    margin:10px;
 }
