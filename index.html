@@ -1,231 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<title>菜々竈 (ナナカマド) - 阿波座/創作和食</title>
-<meta property="og:title" content="菜々竈 (ナナカマド) - 阿波座/創作和食"/>
-<meta property="og:description" content="大阪市 西区 阿波座にある創作和食の菜々竈です。和歌山県産の野菜を中心に、全国各地の旬の魚介類、化学調味料無添加で料理した和食と洋食。その料理と共に日本酒やワインを楽しんで頂ける空間。"/>
-<meta property="og:image" content="http://7kamado.com/img/nanakamado_logo.jpg"/>
-<meta property="og:url" content="http://7kamado.com/"/>
-<meta property="og:type" content="food"/>
-<meta property="fb:admins" content="ishijima.ryo"/>
-<meta name="twitter:card" content="大阪市 西区 阿波座にある創作和食の菜々竈です。和歌山県産の野菜を中心に、全国各地の旬の魚介類、化学調味料無添加で料理した和食と洋食。その料理と共に日本酒やワインを楽しんで頂ける空間。" />
-<meta property="og:site_name" content="菜々竈 (ナナカマド) - 阿波座/創作和食"/>
-<meta name="viewport" content="width=device-width">
-<meta name="keywords" content="菜々竈,居酒屋,大阪,阿波座,立売堀,和食,創作和食,ななかまど,菜々かまど,菜々竃,nanakamado">
-<meta name="description" content="大阪市 西区 阿波座にある創作和食の菜々竈です。和歌山県産の野菜を中心に、全国各地の旬の魚介類、化学調味料無添加で料理した和食と洋食。その料理と共に日本酒やワインを楽しんで頂ける空間。">
-<link rel="stylesheet" href="css/style.css" media="all">
-<link rel="stylesheet" href="css/bootstrap.css" media="all">
-<link rel="stylesheet" href="css/social-likes_classic.css">
-<link href='http://fonts.googleapis.com/css?family=Averia+Gruesa+Libre' rel='stylesheet' type='text/css'>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-<script
-	src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery.big-slide.js"></script>
-<script src="js/social-likes.min.js"></script>
-<script>
-
-	var width,height,center_width,center_height,buttonElements,contentsElements,myLatlng,map,marker;
-	var url=[];
-	url[0] = 'img/flower-back0625.jpg';
-	url[1] = 'img/flower-back1071.jpg';
-	url[2] = 'img/IMG_1322.jpg';
-	url[3] = 'img/IMG_1317.jpg';
-	url[4] = 'img/IMG_1314.jpg';
-	$(function(){
-
-		//buttonElements = "#left_flower,#right_flower,#nanakamado,#name_na,#name_nana,#name_kamado,#vegetable";
-		//displayContentsElements = "#right_flower,#nanakamado,#name_na,#name_nana,#name_kamado,#vegetable";
-		buttonElements = "#left_flower,#right_flower,#nanakamado,#vegetable,#name_na";
-		displayContentsElements = "#right_flower,#nanakamado,#name_na,#vegetable,#conceptMenu,#accessMenu,#menuMenu,#newsMenu";
-		
-		mainContents = "#access,#concept,#menu,#news,#menu3,#menu4";
-		//mainContents = "#access,#concept,#menu";
-		contentsElements = "#front,#contents,#shadow";
-
-		//$(buttonElements).fadeTo(0,0);
-		//$(contentsElements).hide().fadeOut(0);
-		//$(mainContents).hide().fadeOut(0);
-
-		controlWindowSize();
-
-		$(window).on('orientationchange', function(){
-			controlWindowSize();
-		});
-		
-		$(".menu-link").fadeIn(3000);
-		$('.menu-link').bigSlide();
-
-		$(".background").hide().fadeIn(500);
-		$(".logo").hide().fadeIn(3000);
-		$(".social-likes").hide().fadeIn(3000);
-
-		buttonPositionChange();
-
-		$(buttonElements).hover(function(){
-			 $(this).stop();
-			 $(this).fadeTo(200,0.8);
-			},function(){
-			 $(this).stop();
-			 $(this).fadeTo(500,0);
-		})
-
-		$("#close").hover(function(){
-			 $(this).stop();
-			 $(this).fadeTo(100,1);
-			},function(){
-			 $(this).stop();
-			 $(this).fadeTo(100,0.8);
-		})
-
-		$("#shadow,#close").click(function(){
-			 $(contentsElements).fadeOut(500);
-			 $(mainContents).fadeOut(500);
-	         $("#main").animate({ scrollTop: 0 }, '1000');
-		})
-
-		$('#left_flower').attr("target","_blank");
-
-		$('#left_flower').click(function() {
-			window.open('https://www.facebook.com/pages/%E8%8F%9C%E3%80%85%E7%AB%88/449462391846481?fref=ts', '_blank');
-		});
-
-		$('#nanakamado').click(function() {
-			$("#concept").fadeIn(500);
-			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-leaf\"></span> Concept");
-		});
-
-		$('#vegetable').click(function() {
-			$("#menu").fadeIn(500);
-			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-book\"></span> Menu");
-		});
-		
-		$('#name_na').click(function() {
-			$("#news").fadeIn(500);
-			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-send\"></span> News");
-		});
-		/*
-		$('#name_nana').click(function() {
-			$("#menu3").fadeIn(500);
-		});
-		$('#name_kamado').click(function() {
-			$("#menu4").fadeIn(500);
-		});*/
-
-		$('#right_flower').click(function() {
-			$("#access").fadeIn(500);
-			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-map-marker\"></span> Access");
-		});
-
-		$(displayContentsElements).click(function(){
-			$(contentsElements).fadeIn(500);
-		})
-		//////
-		$('#conceptMenu').click(function() {
-			$("#concept").fadeIn(500);
-			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-leaf\"></span> Concept");
-			$('.menu-link').trigger('click');
-		});
-
-		$('#menuMenu').click(function() {
-			$("#menu").fadeIn(500);
-			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-book\"></span> Menu");
-			$('.menu-link').trigger('click');
-		});
-		
-		$('#accessMenu').click(function() {
-			$("#access").fadeIn(500);
-			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-map-marker\"></span> Access");
-			$('.menu-link').trigger('click');
-		});
-
-		$('#newsMenu').click(function() {
-			$("#news").fadeIn(500);
-			$('#mainH1').empty().append("<span class=\"glyphicon glyphicon-send\"></span> News");
-			$('.menu-link').trigger('click');
-		});
-		
-		$('#facebookMenu').attr("target","_blank");
-
-		$('#facebookMenu').click(function() {
-			window.open('https://www.facebook.com/pages/%E8%8F%9C%E3%80%85%E7%AB%88/449462391846481?fref=ts', '_blank');
-			$('.menu-link').trigger('click');
-		});
-		/////
-		$(window).resize(function(){
-			buttonPositionChange();
-		})
-
-		var n = Math.floor(Math.random() * url.length);
-		$('#background,#contents').css('background-image', 'url(' + url[n] + ')');
-		$('#background,#contents').css('background-size', 'cover');	
-
-		function controlWindowSize() {
-			$('meta[name=viewport]').remove();
-			if ((navigator.userAgent.indexOf('iPhone') > 0
-			      && navigator.userAgent.indexOf('iPad') == -1)
-			      || navigator.userAgent.indexOf('iPod') > 0
-			      || (navigator.userAgent.indexOf('Android') > 0
-			      && navigator.userAgent.indexOf('Mobile') > 0)) {
-			  if ( $(window).height()>$(window).width() ){
-			      $('head').append('<meta name="viewport" content="width=750px">')
-			  }
-			}
-		}	
-
-		function buttonPositionChange() {
-			width = $(window).width();
-			height = $(window).height();
-			map_width = $('#contents').width()*0.8;
-
-			center_width = width/2;
-			center_height = height/2;
-
-			$('#logo').css({top:center_height-179,left:center_width-300.5});
-			$('#left_flower').css({top:center_height-116,left:center_width-300.5});
-			$('#right_flower').css({top:center_height-116,left:center_width+158.5});
-			$('#nanakamado').css({top:center_height+38,left:center_width-120.5});
-			$('#name_na').css({top:center_height-84,left:center_width-123.5});
-			$('#name_nana').css({top:center_height-75,left:center_width-35.5});
-			$('#name_kamado').css({top:center_height-86,left:center_width+43.5});
-			$('#vegetable').css({top:center_height+75,left:center_width-72.5});
-			$('#map').css({width:map_width});
-		}
-
-		var formatData = function(date) {
-			var d = new Date(date);
-			return (d.getFullYear() + '.' + (d.getMonth() + 1) + '.' + d.getDate());
-		};
-
-		$.getJSON(
-			'http://ajax.googleapis.com/ajax/services/feed/load?callback=?',
-			{
-				q:'http://www.facebook.com/feeds/page.php?id=449462391846481&format=rss20',
-				v:'1.0',
-				num:20
-			},
-			function (data) {
-				$.each(data.responseData.feed.entries, function(i, item){
-				$('#facebook').append('<li><p class="fb_comm fb_textarea"><span class="fb_date">'+
-				formatData(item.publishedDate)
-				+'</span>' + item.content + '</p></li>');
-				});
-			}
-		);
-
-		$('#likes').socialLikes({
-		    url: 'http://7kamado.com/',
-		    title: '菜々竈',
-		    data: {
-		        media: 'img/logo.png'
-		    }
-		});
-	});
-</script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>菜々竈 (ナナカマド) - 阿波座/創作和食</title>
+	<meta property="og:title" content="菜々竈 (ナナカマド) - 阿波座/創作和食"/>
+	<meta property="og:description" content="大阪市 西区 阿波座にある創作和食の菜々竈です。和歌山県産の野菜を中心に、全国各地の旬の魚介類、化学調味料無添加で料理した和食と洋食。その料理と共に日本酒やワインを楽しんで頂ける空間。"/>
+	<meta property="og:image" content="http://7kamado.com/img/nanakamado_logo.jpg"/>
+	<meta property="og:url" content="http://7kamado.com/"/>
+	<meta property="og:type" content="food"/>
+	<meta property="fb:admins" content="ishijima.ryo"/>
+	<meta name="twitter:card" content="大阪市 西区 阿波座にある創作和食の菜々竈です。和歌山県産の野菜を中心に、全国各地の旬の魚介類、化学調味料無添加で料理した和食と洋食。その料理と共に日本酒やワインを楽しんで頂ける空間。" />
+	<meta property="og:site_name" content="菜々竈 (ナナカマド) - 阿波座/創作和食"/>
+	<meta name="keywords" content="菜々竈,居酒屋,大阪,阿波座,立売堀,和食,創作和食,ななかまど,菜々かまど,菜々竃,nanakamado">
+	<meta name="description" content="大阪市 西区 阿波座にある創作和食の菜々竈です。和歌山県産の野菜を中心に、全国各地の旬の魚介類、化学調味料無添加で料理した和食と洋食。その料理と共に日本酒やワインを楽しんで頂ける空間。">
+	<link rel="stylesheet" href="css/style.css" media="all">
+	<link rel="stylesheet" href="css/bootstrap.css" media="all">
+	<link rel="stylesheet" href="css/social-likes_classic.css">
+	<link href='http://fonts.googleapis.com/css?family=Averia+Gruesa+Libre' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/sublimeSlideshow.css" media="all" />
+	<script type="text/javascript" 
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" 
+		src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/loadCSS.js"></script>
+	<script type="text/javascript" src="js/jquery.sublimeSlideshow.js"></script>
+	<script
+		src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/jquery.big-slide.js"></script>
+	<script type="text/javascript" src="js/social-likes.min.js"></script>
+	<script type="text/javascript" src="js/nanakamado.js"></script>
 </head>
 <body class="body">
 	<nav id="slideMenu" class="panel" role="navigation">
@@ -237,7 +42,7 @@
 	        <li><div id="facebookMenu"><span class="glyphicon glyphicon-thumbs-up"></span> Facebook Page <span class="glyphicon glyphicon-new-window" style="font-size:10px;"></span></div></li>
 	    </ul>
 	</nav>
-	<div class="social-likes" id="likes" data-url="http://7kamado.com/" data-title="菜々竈">
+	<div class="social-likes" id="likes" data-url="http://7kamado.com/" data-title="菜々竈 (ナナカマド) - 阿波座/創作和食">
 		<div class="facebook" title="Share link on Facebook">Facebook</div>
 		<div class="twitter" title="Share link on Twitter">Twitter</div>
 		<div class="plusone" title="Share link on Google+">Google+</div>
@@ -275,43 +80,54 @@
 				<h1 id="mainH1"></h1>
 				<div id="main" class="main">
 					<div id="access">
-						<p class="fb_comm">
+						<div class="fb_comm">
 							<img src="img/logoname.png"><br><br>
-							〒 550-0012 大阪府大阪市大阪市西区立売堀4-4-23 2F<br><br>
-							・ 阿波座駅から276m<br>
-							・ 地下鉄千日前線・中央線阿波座駅２番出口よりあみだ池筋を南へ。２つめの路地を右に入ったところになります<br><br>
-							<span class="glyphicon glyphicon-earphone"></span> 06-6556-9585<br><br>
-							<b><span class="glyphicon glyphicon-time"></span> 営業時間</b><br>
-							12:00～14:00<br>
-							18:00～24:00<br>
-							・ 日曜日・祝日は、ランチは休業となります<br>
+							<p>
+								〒 550-0012 大阪府大阪市大阪市西区立売堀4-4-23 2F<br><br>
+								・ 阿波座駅から276m<br>
+								・ 地下鉄千日前線・中央線阿波座駅２番出口よりあみだ池筋を南へ。<br>
+								　 ２つめの路地を右に入った場所になります<br><br>
+							</p>
+							<span class="glyphicon glyphicon-earphone"></span> 06-6556-9585<br>
 							<br>
+							<b><span class="glyphicon glyphicon-time"></span> 営業時間</b><br>
+							<p>
+								 12:00～14:00<br>
+								 18:00～24:00<br>
+								 ・ 日曜日・祝日は、ランチは休業となります<br>
+							</p>
 							<b><span class="glyphicon glyphicon-bell"></span> 定休日</b><br>
-							不定休<br>
-							・ 月二回程度<br>
-							・ お電話でお問い合わせください<br>
+							<p>
+								 不定休<br>
+								 ・ 月二回程度<br>
+								 ・ お電話でお問い合わせください<br>
+							</p>
 							<br>
 							<img src="img/map.jpg" alt="map" class="img-rounded map">
 							<br><br>
 							<a href="https://maps.google.co.jp/maps?es_sm=119&um=1&ie=UTF-8&q=%E8%8F%9C%E3%80%85%E7%AB%88&fb=1&gl=jp&hq=%E8%8F%9C%E3%80%85%E7%AB%88&cid=6031834777810485408&sa=X&ei=yO19VJn1Lqj3mQW5loA4&ved=0CCMQrwswAA" target="_blank" ><span class="glyphicon glyphicon-map-marker"></span> Google Mapでみる <span class="glyphicon glyphicon-new-window" style="font-size:10px;"></span></a>
-						</p>
+						</div>
 						<br><br><br><br><br><br><br><br><br><br>
 					</div>
 					<div id="concept">
-						<p class="fb_comm">
+						<div class="fb_comm">
 							<img src="img/logo.png" alt="concept" class="concept">
-							<span class="concept-text">
-								<img src="img/concept.png" alt="和歌山県産の新鮮な野菜を中心に、全国各地の旬の魚介類、世界各地の食材を使い丹精を込めて作り上げた料理をワインや日本酒と共にお楽しみください。"><br>
-								<img src="img/wines.png" alt="wines" class="concept-img">
-								<img src="img/tiles.png" alt="tiles" class="concept-img">
-								<img src="img/pig.png" alt="pig" class="concept-img">
-							</span>
-						</p>
+							<div class="concept-text">
+								<div>
+									<img src="img/concept.png" alt="和歌山県産の新鮮な野菜を中心に、全国各地の旬の魚介類、世界各地の食材を使い丹精を込めて作り上げた料理をワインや日本酒と共にお楽しみください。" class="concept-message">
+								</div>
+								<div class="concept-imgs">
+									<img src="img/pig.png" alt="pig" class="concept-img">
+									<img src="img/wines.png" alt="wines" class="concept-img">
+									<img src="img/tiles.png" alt="tiles" class="concept-img">
+								</div>
+							</div>
+						</div>
 						<br><br><br><br><br><br><br><br><br>
 					</div>
 					<div id="menu">
 						<br>
-						<img src="img/menu.png" alt="menu" class="img-rounded menu">
+						<img src="img/menu.png" alt="menu" class="menu">
 						<br><br><br><br><br><br><br><br><br>
 					</div>
 					<div id="news">

@@ -1,9 +1,8 @@
-@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 
 html,body.body {
-	font-family: 'Noto Sans Japanese', serif;
 	height: 100%;
 	margin: 0;
+	-webkit-text-size-adjust: 100%;
 }
 
 #background {
@@ -42,12 +41,13 @@ html,body.body {
 #contents {
 	background-attachment: fixed;
 	background-position: center;
+	background-image: url("../img/paper-f1.png");
 	height: 89%;
 	width: 79%;
 	position: absolute;
 	top: 5.5%;
 	left: 10.5%;
-	opacity: 0.9;
+	opacity: 0.99;
 	display:none;
 }
 
@@ -178,7 +178,6 @@ div h1 {
 	padding-bottom: 10px;
 	//font-weight: bolder;
 	font-size: 25px;
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 	color: #504f4f;
 	//text-shadow: 0px 2px 1px #bbbaba;
 };
@@ -200,7 +199,6 @@ h2 {
 }
 
 div h3 {
-	background-image: url("../img/location_icon.png");
 	background-repeat: no-repeat;
 	height: 64px;
 	width: 96px;
@@ -222,7 +220,6 @@ H3 a {
 }
 
 .description {
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 	font-weight: bold;
 	padding: 0px 10px 0px 0px;
 }
@@ -242,7 +239,6 @@ H3 a {
 .blog {
 	padding: 0px 5px 50px 5px;
 	text-align: left;
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 }
 
 .blogbody {
@@ -257,14 +253,12 @@ H3 a {
 	margin-bottom: 0px;
 	padding: 12px 0px 25px 0px;
 	border-top: 1px solid #D3D3D3;
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 	font-size: 10px;
 }
 
 .title {
 	margin-top: 0px;
 	margin-bottom: 0px;
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 	font-size: 12PX;
 }
 
@@ -276,7 +270,6 @@ H3 a {
 	padding: 10px 0px 5px 0px;
 	margin-top: 0px;
 	line-height: 1.8em;
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 }
 
 .posted {
@@ -284,7 +277,6 @@ H3 a {
 	margin-bottom: 5px;
 	padding: 15px 0px 3px 0px;
 	font-size: 10px;
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 }
 
 .posted a {
@@ -322,7 +314,6 @@ H3 a {
 	text-align: center;
 	color: #5D5D5D;
 	font-size: 12px;
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 }
 
 .calendarday {
@@ -330,7 +321,6 @@ H3 a {
 	margin-bottom: 10px;
 	color: #5D5D5D;
 	font-size: 10px;
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 }
 
 .calendarday a {
@@ -341,7 +331,6 @@ H3 a {
 	padding: 4px 10px 4px 10px;
 	font-weight: bold;
 	background-color: #ECECEB;
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 }
 
 .side {
@@ -349,7 +338,6 @@ H3 a {
 	padding: 3px 10px 10px 0px;
 	margin-bottom: 10px;
 	font-size: 10px;
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 }
 
 .side a {
@@ -370,7 +358,6 @@ H3 a {
 	margin-right: 10px;
 	text-align: center;
 	font-size: 10px;
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 }
 
 #comments {
@@ -401,19 +388,16 @@ H3 a {
 .comments-head {
 	font-weight: bold;
 	margin: 0px;
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 }
 
 .comments-body {
 	margin: 0px;
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 }
 
 .comments-post {
 	padding: 3px 0px 3px 0px;
 	font-size: 10px;
 	text-align: right;
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 }
 
 #trackback {
@@ -422,7 +406,6 @@ H3 a {
 	border: 1px dotted #666;
 	padding: 5px;
 	text-align: left;
-	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 }
 
 #footer {
@@ -501,7 +484,7 @@ H3 a {
 }
 
 .map {
-    width: 65%;
+    width: 50%;
 }
 
 .menu {
@@ -629,17 +612,47 @@ dd{
   margin-top: 5px;
   line-height: 1.6;
   font-size: medium;
-  // background-color:#ffffff;
-  background-image: url("../img/paper-f1.png");
+  background-color:#ffffff;
   padding:20px;
   margin:20px;
   width:90%;
+  position: relative;
 }
 
-.fb_textarea {
-     border-radius: 6px; /* CSS3���� */ 
-     -webkit-border-radius: 6px; /* Safari,Google Chrome�p */ 
-    -moz-border-radius: 6px; /* Firefox�p */ 
+.fb_comm::after {
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	content: '';
+	box-shadow: 0 0 20px rgba(0,0,0,.2);
+	border-radius: 30px;
+}
+
+.menu {
+	position: relative;
+}
+.menu::before,
+.menu::after {
+	position: absolute;
+	bottom: 10px;
+	z-index: -1;
+	content: '';
+	width: 50%;
+	height: 50%;
+	box-shadow: 0 10px 15px rgba(0,0,0,.5);
+}
+.menu::before {
+	left: 10px;
+	-webkit-transform: rotate(-4deg);
+	transform: rotate(-4deg);
+}
+.menu::after {
+	right: 10px;
+	-webkit-transform: rotate(4deg);
+	transform: rotate(4deg);
 }
 
 #info img {
@@ -667,6 +680,19 @@ dd{
     margin-left:auto;
     margin-right:auto;
     margin-top:50px;
+}
+
+.concept-message {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;     
+}
+
+.concept-imgs {
+    display:block;
+    margin-left:auto;
+    margin-right:auto; 
+    text-align: center;
 }
 
 .concept-img {
