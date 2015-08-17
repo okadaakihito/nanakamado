@@ -180,16 +180,36 @@ $(function(){
 	};
 
 	$.getJSON(
-		'https://graph.facebook.com/v2.3/449462391846481/feed?access_token=1133492153344844|A186-M94_Kbr09qz9vwrnrrSqw8',
+		'https://graph.facebook.com/v2.4/449462391846481/feed?fields=message,created_time,attachments&access_token=1133492153344844|A186-M94_Kbr09qz9vwrnrrSqw8',
 		function (data) {
 			$.each(data, function(i, item){
 				$.each(item, function(j, json){
-					if (json.created_time!=null) {
+					var li = [];
+					if (json.message!=null) {
+						//console.log(json);
 						json.message = json.message.replace(/\n/g, "<br>");
 						json.created_time = json.created_time.replace(/\+0000/, "");
-						$('#facebook').append('<li><p class="fb_comm fb_textarea"><span class="fb_date">'+
+						li.push('<span class="fb_date">'+
 						formatData(json.created_time)
-						+'</span>' + json.message + '</p></li>');
+						+'</span>' + json.message);
+					}
+					if (li != "" && json.attachments!=null) {
+						json = json.attachments;
+						if (json.data!=null) {
+							json = json.data[0];
+							if (json.media!=null) {
+								li.push('<br><img src="' + json.media.image.src + '" class="fb-img">');
+							}
+							if (json.subattachments!=null) {
+								li.push('<br>');
+								$.each(json.subattachments.data, function(j, json){
+									li.push('<img src="' + json.media.image.src + '" class="fb-img">');
+								});
+							}
+						}
+					}
+					if (li != "") {
+						$('#facebook').append('<li><span class="fb_comm fb_textarea">' + li.join('') + '</span></li>');
 					}
 				});
 			});
