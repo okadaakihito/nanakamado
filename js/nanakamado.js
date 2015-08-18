@@ -198,12 +198,13 @@ $(function(){
 						if (json.data!=null) {
 							json = json.data[0];
 							if (json.media!=null) {
-								li.push('<br><img src="' + json.media.image.src + '" class="fb-img">');
+								li.push('<br>');
+								li.push('<a href="' + json.media.image.src + '" data-lightbox="roadtrip-' + i + '"><img src="' + json.media.image.src + '" class="fb-img"></a>');
 							}
 							if (json.subattachments!=null) {
 								li.push('<br>');
 								$.each(json.subattachments.data, function(j, json){
-									li.push('<img src="' + json.media.image.src + '" class="fb-img">');
+									li.push('<a href="' + json.media.image.src + '" data-lightbox="roadtrip-' + i + '"><img src="' + json.media.image.src + '" class="fb-img"></a>');
 								});
 							}
 						}
@@ -212,6 +213,8 @@ $(function(){
 						$('#facebook').append('<li><span class="fb_comm fb_textarea">' + li.join('') + '</span></li>');
 					}
 				});
+			});
+			$.getScript("js/lightbox.js", function(){
 			});
 		}
 	);

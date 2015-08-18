@@ -663,8 +663,6 @@ dd{
 
 #info a:not(.menu-link) {
 	color: #7C9907;
-	text-decoration: none;
-  	pointer-events : none;
 }
 
 #likes {
